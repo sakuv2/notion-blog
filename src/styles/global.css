@@ -48,6 +48,12 @@ body {
   overflow-x: hidden;
 }
 
+@media screen and (min-width: 30em) {
+  .f0-ns {
+    font-size: 15em;
+  }
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
   color: #000;
