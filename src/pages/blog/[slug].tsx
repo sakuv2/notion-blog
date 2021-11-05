@@ -28,7 +28,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
         redirect: '/blog',
         preview: false,
       },
-      unstable_revalidate: 5,
+      revalidate: 5,
     }
   }
   const postData = await getPageData(post.id)
@@ -126,7 +126,7 @@ const RenderPost = ({ post, redirect, preview }) => {
 
   // if you don't have a post at this point, and are not
   // loading one from fallback then  redirect back to the index
-  if (!post) {
+  if (!post || post.Published != 'Yes') {
     return (
       <div className={blogStyles.post}>
         <p>
